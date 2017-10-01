@@ -1,0 +1,11 @@
+①誤:float_of_int int_of_float 5.0
+　正:float_of_int (int_of_float 5.0)
+　結果:5.
+
+②誤:sin 3.14 /. 2.0 ** 2.0 +. cos 3.14 /. 2.0 ** 2.0
+　正:sin (3.14 /. 2.0) ** 2.0 +. cos (3.14 /. 2.0) ** 2.0
+　結果:1.
+
+③誤:sqrt 3 * 3 + 4 * 4
+　正:int_of_float (sqrt (float_of_int (3 * 3 + 4 * 4)))
+　結果:5（整数）

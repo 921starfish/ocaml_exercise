@@ -1,0 +1,5 @@
+①float = 5.5
+②int = 0
+③char = 'U'
+④int = 255
+⑤float = 25.
