@@ -1,2 +1,2 @@
 let capitalize (chr: char) =
-	Char.uppercase(chr);;
+  Char.uppercase_ascii(chr);;
