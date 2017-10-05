@@ -1,0 +1,25 @@
+考察:
+問題で定義したfact 4 を#traceすると、
+fact <-- 4
+fact <-- 3
+fact <-- 2
+fact <-- 1
+fact <-- 0
+fact <-- -1
+fact <-- -2
+　︙
+　︙
+というように再帰が終わらない。
+これは、値呼び出しではfact 4の計算の評価ステップが以下のようになり、仮にn=1がtrueになっても(condで定義したe2が先に評価されることが原因である。
+
+
+fact 4 → cond ((4 = 1), 1, 4 * fact (4-1))
+       → cond (false, 1, 4 * fact (4-1))
+       → cond (false, 1, 4 * fact 3)
+       → cond (false, 1, 4 * cond ((3 = 1), 1, 3 * fact (3-1))
+       → cond (false, 1, 4 * cond (false, 1, 3 * fact (2-1))
+       → cond (false, 1, 4 * cond (false, 1, 3 * fact 2)
+       ︙
+       ︙
+
+
