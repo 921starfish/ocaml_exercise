@@ -1,0 +1,23 @@
+let id x = x;;
+let ($) f g x = f (g x);;
+
+(* 上記が定義されているとして *)
+
+let rec funny f n =
+  if n = 0 then id
+  else if n mod 2 = 0 then funny (f $ f) (n / 2) 
+  else funny (f $ f) (n / 2) $ f;;
+
+(* val funny : (’a -> ’a) -> int -> ’a -> ’a = <fun> *)
+
+(*
+関数funnyは「受け取った型と同じ型を返す関数」とint型の値を受け取って、
+「受け取った型と同じ型を返す関数を返す関数」である。
+
+ここで、nが0のときは恒等関数idを返す。
+nが0でないとき、nが偶数なら、f◦fとn/2にfunnyを適用した関数を返し
+nが奇数なら、f◦fとn/2にfunnyを適用した関数とfを合成したものを返す。
+
+つまりfunnyはn>0なら、与えられた関数をn回合成した関数を返す関数である。
+
+*)
