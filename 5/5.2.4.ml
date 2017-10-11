@@ -1,0 +1,1 @@
+let rec concat lst = List.fold_left (@) [] lst;;
