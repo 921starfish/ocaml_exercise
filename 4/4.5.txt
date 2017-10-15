@@ -1,0 +1,11 @@
+let twice f x = f (f x);;
+
+考察:
+上記の定義のtwiceを使って、twice twice f xの計算ステップを示すと、以下のようになる。
+
+twice twice f x → twice (twice f) x
+                → (twice f(twice f x))
+                → twice f f(f x)
+                → f(f(f(f x)))
+
+よって、twice twice f x は f (f (f (f x))) として働く
