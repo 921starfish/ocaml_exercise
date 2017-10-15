@@ -17,7 +17,7 @@ let fib n =
 
 (*④*)
 let max_ascii str =
-let rec itermax_ascii (i,str,max) = 
-        if i = String.length str -1 then max
+    let rec itermax_ascii (i, str, max) = 
+        if i = String.length str - 1 then max
         else itermax_ascii(i+1,str,if str.[i]>max then str.[i] else max) in
 itermax_ascii(0,str,char_of_int 0);;
