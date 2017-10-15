@@ -1,5 +1,4 @@
 let rec roman def n =
-  match def with
+    match def with
     [] -> ""
-  | (n', s) :: rest when n >= n' -> s ^ roman def (n - n')
-  | (n', s) :: rest -> roman rest n;;
+  | (x, str) :: rest -> if n >= x then str ^ roman def (n - x) else roman rest n;;

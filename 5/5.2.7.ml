@@ -1,4 +1,4 @@
-let rec filter f = function
+let rec filter f lst =
+    match lst with
     [] -> []
-  | x :: rest when f x -> x :: filter f rest
-  | x :: rest -> filter f rest;;
+  | x :: rest -> if f x then x :: (filter f rest) else filter f rest;;
