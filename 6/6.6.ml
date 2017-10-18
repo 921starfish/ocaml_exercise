@@ -1,7 +1,6 @@
 type 'a tree = Lf | Br of 'a * 'a tree * 'a tree;;
 
-
-
+(* 教科書のpreord *)
 let rec preord t l =
     match t with
     Lf -> l
