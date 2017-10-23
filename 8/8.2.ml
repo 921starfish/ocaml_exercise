@@ -1,1 +1,1 @@
-let incr x = x := x.contents + 1;
+let incr x = x := x.contents + 1
