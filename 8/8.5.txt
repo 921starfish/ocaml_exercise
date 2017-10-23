@@ -1,0 +1,31 @@
+以下、実行結果と挙動の説明を併記する
+
+# let x = ref [];;
+val x : '_a list ref = {contents = []}
+
+ここでは、xは任意の型のリストをcontentsとしてもつ事ができるref型の数として定義される
+
+# (2 :: !x, true :: !x);;
+Error: This expression has type int list
+       but an expression was expected of type bool list
+       Type int is not compatible with type bool 
+
+
+( 2:: !x )の評価時に、xはint型のリストをcontentsとしてもつref型の数(int list ref)として固定される
+(xが参照している型がint listとして固定される)と考えられる
+そのためtrue :: !xをしようとするとx.contentsはint型のリストのため型エラーになる
+
+--------------------
+
+# x := [1];;
+- : unit = ()
+
+x := [1]の評価時に、xはint型のリストをcontentsとしてもつref型の数(int list ref)として固定される
+(xが参照している型がint listとして固定される)と考えられると考えられる
+
+# true :: !x;;
+Error: This expression has type int list
+       but an expression was expected of type bool list
+       Type int is not compatible with type bool 
+
+true :: !xをしようとするとx.contentsはint型のリストのため型エラーになる
