@@ -1,0 +1,7 @@
+任意の二分木tに対して
+
+preorder(reflect(t)) = 「postorder(t)の逆順」
+inorder(reflect(t)) = 「inorder(t)の逆順」 
+postorder(reflect(t)) = 「postorder(t)の逆順」
+
+が成り立つ。
