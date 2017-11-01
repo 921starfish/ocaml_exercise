@@ -41,4 +41,4 @@ let f6 f =
 let f7 x a=
   match x with
     Left f -> Left(f a)
-  | Right g ->Right(g a)
+  | Right g -> Right(g a)
